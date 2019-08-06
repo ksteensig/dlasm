@@ -1,0 +1,33 @@
+<module> ::= <import>* <constant>* <function>*
+
+<import> ::= @import <label> = <filename>
+
+<header> ::= <constant>*
+
+<function> := <function'>*
+
+<function'> ::= .def <label>: <opcode>*
+
+<label> ::= initial <subsequent>*
+
+<initial> ::= <letter>
+
+<subsequent> ::= <initial> | digit
+
+<letter> ::= [a-z]
+
+<digit> ::= [0-9]
+
+<constant> ::= .const <label>: <value>
+
+<value> ::= <int> | <float> | <bool> | <list>
+
+<int> ::= -<0-9>* | <digit>*
+
+<float> ::= -<digit>*.<digit>* | <digit>*.<digit>
+
+<bool> ::= @t | @f
+
+<list> ::= {<value>*}
+
+<function> ::= .function <label>
